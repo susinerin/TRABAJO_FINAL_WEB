@@ -1,0 +1,429 @@
+body {
+    height: 100%;
+}
+
+* {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Space Grotesk', sans-serif;
+    
+}
+
+@keyframes animacion_inicial {
+    0%{
+        opacity: 100;
+        visibility: inherit;
+        z-index: 300;
+    }
+
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+}
+@keyframes animacion_2 {
+    0%{
+        opacity: 0;
+        visibility: inherit;
+    }
+
+    100%{
+        opacity: 100;
+    }
+}
+
+
+h2, h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-weight: 300;
+}
+
+
+
+
+
+.inicio {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 251, 0);
+    opacity: 80;
+    position: absolute;
+    top: 0;
+
+    
+
+
+    animation-name: animacion_inicial;
+    animation-duration: 3s;
+}
+
+
+
+
+section {
+    height: 100vh;
+
+}
+
+
+
+#menu-desktop {
+    top: 0;
+    text-align: center;
+    height: 90px;
+    position: sticky;
+    background-color: rgb(255, 0, 0);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+nav ul {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    
+}
+
+nav ul li {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+nav ul li a:hover {
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+
+/* MENU - MOBILE  */
+
+#menu {
+    padding: 3vw 8vw 5vw 3vw;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    background-color: rgb(229, 255, 0);
+    left: -110vw;
+    z-index: 120;
+
+    animation-name: animacion_2;
+    animation-duration: 3s;
+  
+  
+  }
+  
+  #menu ul {
+    padding-top: 6em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+  }
+  
+  #menu ul li {
+    list-style: none;
+    padding-bottom: 4em;
+  }
+  
+  #menu ul li a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: gainsboro;
+  }
+  
+  #menu ul li a:hover {
+    opacity: 50%;
+  }
+
+/* SECCIÓN LANDING  */
+
+#landing {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio img {
+    width: 20%;
+}
+
+.logo-landing img {
+    
+    width: 20%;
+    height: auto;
+
+    animation-name: animacion_2;
+    animation-duration: 3s;
+
+
+}
+
+.container-landing {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+
+}
+/* MENU HAMBURGUESA  */
+
+.container {
+    visibility: hidden;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 1;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 400;
+
+    
+  }
+
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(71, 71, 71);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  /* Rotate first bar */
+  .change .bar1 {
+    transform: translate(0, 11px) rotate(-90deg);
+  }
+  
+  /* Fade out the second and third bar */
+  .change .bar2 {opacity: 0;}
+  .change .bar3 {opacity: 0;}
+  
+
+
+
+/* SECCIÓN PRODUCTOS  */
+
+#productos {
+    height: 138vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.producto {
+    max-width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 2em;
+    box-shadow: inset 0 0 50px #f2f2f2a7;
+}
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.producto:hover {
+    transform: scale(105%);
+}
+
+/* SECCIÓN CONTACTO  */
+
+#contacto {
+    display: flex;
+    padding: 5em;
+    height: 50vh;
+    
+}
+
+.contacto {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+
+
+.contacto p:nth-child(3){
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.contacto form {
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.contacto form label {
+    margin-top: 1em;
+    font-size: 1.2em;
+}
+
+.contacto form input {
+    padding: 1em;
+}
+
+.contacto form textarea {
+    padding: 1em;
+}
+
+/* SECCIÓN FOOTER  */
+
+#footer {
+    height: 50px;
+    text-align: center;
+
+}
+
+@media (max-width: 1500px) {
+    
+    section {
+        height: 40vh;
+    }
+
+    #contacto {
+        height: 40vh;
+    }
+
+    .contacto form {
+        width: 80%;
+    }
+
+    #productos {
+        height: 76vh;
+    }
+}
+@media (max-width: 1000px) {
+    .container-productos {
+        flex-wrap: wrap;
+        width: 90%;
+    }
+
+    .inicio img {
+        width: 50%;
+    }
+    .logo-landing img {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    #menu-desktop {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+    }
+
+
+
+    .container {
+        visibility: initial;
+    }
+
+    .container-productos {
+        flex-direction: column;
+        width: 80%;
+        align-content: center;
+    }
+
+    #productos {
+        height: 290vh;
+    }
+
+    .producto {
+        max-width: 60%;
+    }
+
+
+}
+@media (max-width: 700px) {
+    :hover {
+        display: none;
+    }
+    h3 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 0.8em;
+    }
+
+    #productos {
+        height: 300vh;
+    }
+
+    .producto {
+        max-width: 80%;
+    }
+
+    #contacto {
+        flex-wrap: wrap;
+        padding: 2em;
+    }
+
+    .contacto form {
+        width: 60%;
+    }
+
+}
+@media (max-width: 600px) {
+    #productos {
+        height: 185vh;
+    }
+
+    section {
+        height: 54vh;
+    }
+}
+
+
